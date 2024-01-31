@@ -4,10 +4,10 @@ import { ptBR } from "date-fns/locale";
 import { Header } from "../_components/header";
 import { Search } from "./_components/search";
 import { BookingItem } from "../_components/booking-item";
-
-import { db } from "../_lib/prisma";
 import { BarbershopItem } from "./_components/barbershop-item";
 import Footer from "../_components/footer";
+
+import { db } from "../_lib/prisma";
 
 export default async function Home() {
     const barbershops = await db.barbershop.findMany({});
