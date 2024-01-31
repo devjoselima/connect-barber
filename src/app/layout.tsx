@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 
-import barber from "./barber.ico";
+import Footer from "./_components/footer";
 
 const inter = Nunito({ subsets: ["latin"] });
 
@@ -21,7 +21,9 @@ export default function RootLayout({
             <head>
                 <link rel="icon" type="image/svg+xml" href="./barber.svg" />
             </head>
-            <body className={`${inter.className} dark`}>{children}</body>
+            <body className={`${inter.className} dark`}>
+                {children} <Footer />
+            </body>
         </html>
     );
 }

@@ -1,14 +1,23 @@
-import { Button } from "@/app/_components/ui/button";
-import { Card, CardContent } from "@/app/_components/ui/card";
+"use client";
 
 import { Barbershop } from "@prisma/client";
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
+
+import { Button } from "@/app/_components/ui/button";
+import { Card, CardContent } from "@/app/_components/ui/card";
 
 interface BarbershopItemProps {
     barbershop: Barbershop;
 }
 
 export const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
+    const router = useRouter();
+
+    const handleBookingClick = () => {
+        router.push(`/barbershops/${barbershop.id}`);
+    };
     return (
         <Card className="min-w-[177px] max-w-[167px] rounded-2xl">
             <CardContent className="px-1 pb-3">
@@ -30,7 +39,10 @@ export const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
                         {barbershop.address}
                     </p>
 
-                    <Button variant="secondary" className="w-full mt-3">
+                    <Button
+                        onClick={handleBookingClick}
+                        variant="secondary"
+                        className="w-full mt-3">
                         Reservar
                     </Button>
                 </div>
