@@ -9,7 +9,7 @@ export const Header = () => {
     return (
         <Card>
             <CardContent className="flex p-5 items-center justify-between">
-                <Image src={Logo} alt="FSW Barber" height={22} width={170} />
+                <Image src={Logo} alt="FSW Barber" height={22} width={140} />
 
                 <Button variant="outline" size="icon" className="h-8 w-8">
                     <MenuIcon size={18} />
