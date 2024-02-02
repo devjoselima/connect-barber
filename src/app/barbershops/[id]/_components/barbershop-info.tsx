@@ -8,6 +8,8 @@ import { Button } from "@/app/_components/ui/button";
 import MapIcon from "../../../../../public/Map.png";
 import Image from "next/image";
 import { ChevronLeftIcon, MenuIcon } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/app/_components/ui/sheet";
+import SideMenu from "@/app/_components/side-menu";
 
 interface BarberhopInfoProps {
     barbershop: Barbershop;
@@ -30,12 +32,22 @@ const BarbershopInfo = ({ barbershop }: BarberhopInfoProps) => {
                     <ChevronLeftIcon />
                 </Button>
 
-                <Button
-                    size="icon"
-                    variant="outline"
-                    className="z-50 absolute top-4 right-4">
-                    <MenuIcon />
-                </Button>
+                <Sheet>
+                    <Button variant="outline" size="icon" className="h-8 w-8">
+                        <SheetTrigger asChild>
+                            <Button
+                                size="icon"
+                                variant="outline"
+                                className="z-50 absolute top-4 right-4">
+                                <MenuIcon />
+                            </Button>
+                        </SheetTrigger>
+
+                        <SheetContent className="p-0">
+                            <SideMenu />
+                        </SheetContent>
+                    </Button>
+                </Sheet>
 
                 <Image
                     src={barbershop.imageUrl}
