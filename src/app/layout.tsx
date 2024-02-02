@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 
 import Footer from "./_components/footer";
+import AuthProvider from "./_providers/auth";
 
 const inter = Nunito({ subsets: ["latin"] });
 
@@ -18,11 +19,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br">
-            <head>
-                <link rel="icon" type="image/svg+xml" href="./barber.svg" />
-            </head>
             <body className={`${inter.className} dark`}>
-                {children} <Footer />
+                <AuthProvider>
+                    {children}
+                    <Footer />
+                </AuthProvider>
             </body>
         </html>
     );
