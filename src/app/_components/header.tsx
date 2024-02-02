@@ -18,15 +18,15 @@ export const Header = () => {
                 <Image src={Logo} alt="FSW Barber" height={22} width={140} />
 
                 <Sheet>
-                    <Button variant="outline" size="icon" className="h-8 w-8">
-                        <SheetTrigger asChild>
+                    <SheetTrigger asChild>
+                        <Button variant="outline" size="icon">
                             <MenuIcon size={18} />
-                        </SheetTrigger>
+                        </Button>
+                    </SheetTrigger>
 
-                        <SheetContent className="p-0">
-                            <SideMenu />
-                        </SheetContent>
-                    </Button>
+                    <SheetContent className="p-0">
+                        <SideMenu />
+                    </SheetContent>
                 </Sheet>
             </CardContent>
         </Card>
